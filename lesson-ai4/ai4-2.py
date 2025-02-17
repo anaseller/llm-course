@@ -31,7 +31,7 @@ def get_gemini_response(prompt):
         )
         return response.text  # Возвращаем текст ответа
     except ReadTimeout:
-        # Исправлено: выводим значение таймаута в секундах без преобразования
+        # Выводим значение таймаута в секундах
         return f"Запрос к Gemini превысил таймаут ({timeout_seconds} секунд)."
     except Exception as e:
         # Общая обработка исключений для отлова неожиданных ошибок

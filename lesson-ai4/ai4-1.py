@@ -24,7 +24,6 @@ def get_gemini_response(prompt):
     response = client.models.generate_content(
         model="gemini-2.0-flash",
         contents=[prompt],
-
     )
 
     return response.text
