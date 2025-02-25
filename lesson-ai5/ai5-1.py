@@ -19,7 +19,7 @@ api_key = os.getenv("GEMINI_API_KEY")
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=api_key)
 
 # Создаем загрузчик, который скачает содержимое указанного веб-адреса.
-loader = WebBaseLoader("https://habr.com/ru/companies/bothub/news/883052/")
+loader = WebBaseLoader("https://habr.com/ru/articles/883604/")
 
 # Загружаем документ с веб-страницы. В переменной docs будет храниться текст или структура полученного документа.
 docs = loader.load()
