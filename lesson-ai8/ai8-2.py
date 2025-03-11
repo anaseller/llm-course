@@ -155,7 +155,7 @@ def analyze_image_with_clip(image):
     # Вывод 5 наиболее вероятных совпадений
     print("\nImage Analysis Results:")
     for value, index in zip(values, indices):
-        print(f"{categories[index]:>16s}: {value.item():.2f}%")
+        print(f"{categories[index]:>16s}: {100 * value.item():.2f}%")
 
     # Возврат наиболее вероятной категории
     top_category = categories[indices[0]]
@@ -187,7 +187,7 @@ def main():
     print("\n=== Pipeline Summary ===")
     print(f"Speech input transcribed to: '{transcript}'")
     print(f"Generated image saved as: 'generated_image.png'")
-    print(f"CLIP analysis: This appears to be {top_category} ({confidence:.2f}% confidence)")
+    print(f"CLIP analysis: This appears to be {top_category} ({100 * confidence:.2f}% confidence)")
 
     # Очистка временного аудиофайла, если он был записан
     if audio_path.endswith(".wav") and "tmp" in audio_path:
